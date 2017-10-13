@@ -13,7 +13,8 @@ def main():
     parser.add_argument('-w', help='Connect device via wifi', action='store_true')
     parser.add_argument('-l', help='List attached devices (IP/ID)', action='store_true')
     parser.add_argument('-t', dest='test_suite', help='Specify test suite [test_suite_01 | test_suite_02]')
-    parser.add_argument('-d', dest='device_id', help='specify device ID or IP')
+    parser.add_argument('-d', dest='device_id', help='Specify device ID or IP')
+    parser.add_argument('-n', dest='test_name', help='Specify test name')
 
     parsed = parser.parse_args()
 
@@ -34,6 +35,12 @@ def main():
             automation_execute.run_test_suite(parsed.device_id, test_suite)
         else:
             print("Require device id for test suite!!")
+    elif parsed.test_name is not None:
+        if parsed.device_id is not None:
+            automation_execute = AutomationExecutor()
+            automation_execute.run_automation(parsed.device_id, parsed.test_name)
+        else:
+            print("Require device id for test!!")
 
 
 if __name__ == '__main__':

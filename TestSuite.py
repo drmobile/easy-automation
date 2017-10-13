@@ -1,9 +1,11 @@
+TEST_PACKGE_NAME = "me.soocii.socius.StreamingTest"
+
 TEST_SUITE_A_LIST = [
-    'me.soocii.socius.StreamingTest.BroadcastStressTest#stressTestBroadcast_T0001'
+    'BroadcastStressTest#stressTestBroadcast_T0001'
 ]
 
 TEST_SUITE_B_LIST = [
-    'me.soocii.socius.StreamingTest.BroadcastStressTest#stressTestBroadcast_T0002'
+    'BroadcastStressTest#stressTestBroadcast_T0002'
 ]
 
 
