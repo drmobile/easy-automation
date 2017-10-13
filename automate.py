@@ -13,7 +13,7 @@ def main():
     parser.add_argument('-w', help='Connect device via wifi', action='store_true')
     parser.add_argument('-l', help='List attached devices (IP/ID)', action='store_true')
     parser.add_argument('-t', dest='test_suite', help='Specify test suite [test_suite_01 | test_suite_02]')
-    parser.add_argument('-d', dest='evice_id', help='specify device ID or IP')
+    parser.add_argument('-d', dest='device_id', help='specify device ID or IP')
 
     parsed = parser.parse_args()
 
