@@ -16,6 +16,7 @@ class AutomationExecutor:
     def run_automation(self, device_id, claz):
         command = 'adb -s {0} shell am instrument -w -r   -e debug false -e class {1} {2}'.format(device_id, claz, Const.AUTOMATION_TEST_RUNNER)
         self.adbAdapter.adb_execute(command)
+        self.logDump.dump_load(device_id)
 
     def run_test_suite(self, device_id, test_suite):
         if len(test_suite) == 0:

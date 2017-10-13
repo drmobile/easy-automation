@@ -15,7 +15,7 @@ class LogDump:
         log_path = self._get_log_name(device_id)
         log_file = open(log_path, 'w')
         command = 'adb -s {0} logcat -d -v threadtime'.format(device_id)
-        log_d(command)
+        log_d(log_path)
         log_file.write(adb_shell.adb_execute(command))
 
     def _get_log_name(self, device_id):

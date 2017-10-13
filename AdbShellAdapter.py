@@ -130,10 +130,8 @@ class AdbShellAdapter():
             return False
 
     def adb_execute(self, command):
-        log_d(command)
         try:
             command_list = command.split(" ")
-
             adb_output = subprocess.check_output(command_list)
             adb_output_string = adb_output.decode("utf-8")
             return adb_output_string

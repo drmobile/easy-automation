@@ -41,8 +41,6 @@ def main():
             automation_execute = AutomationExecutor()
             test_name = '{0}.{1}'.format(TestSuite.SOOCII_PACKGE_NAME, parsed.test_name)
             automation_execute.run_automation(parsed.device_id, test_name)
-            log_dump = LogDump()
-            log_dump.dump_load(parsed.device_id)
         else:
             print("Require device id for test!!")
 
