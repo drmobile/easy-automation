@@ -5,10 +5,11 @@ from Log import log_e, log_d
 from DeviceConnector import DeviceConnector
 import Const
 from AutomationExecutor import AutomationExecutor
+import TestSuite
 
 class DeviceInitialization:
 
-    TESTER_DICT = {'tester_a': 'testLogIn_tester_a', 'tester_b': 'testLogIn_tester_b', 'tester_c': 'testLogIn_tester_c'}
+    TESTER_DICT = {'tester_a': 'login.EmailLogIn#testLogIn_tester_a', 'tester_b': 'login.EmailLogIn#testLogIn_tester_b', 'tester_c': 'login.EmailLogIn#testLogIn_tester_c'}
 
     def __init__(self):
         self.apkInstaller = ApkInstaller()
@@ -25,7 +26,7 @@ class DeviceInitialization:
 
         # Auto Email login
         test_name = self.TESTER_DICT[test_account]
-        test_claz = '{0}#{1}'.format(Const.EMAIL_LOGIN_CLASS, test_name)
+        test_claz = '{0}.{1}'.format(TestSuite.SOOCII_PACKGE_NAME, test_name)
         self.automationExecutor.run_automation(device_id, test_claz)
 
         return True

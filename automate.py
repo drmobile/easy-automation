@@ -4,6 +4,7 @@ from DeviceInitialization import DeviceInitialization
 from DeviceConnector import DeviceConnector
 from AutomationExecutor import AutomationExecutor
 from AdbShellAdapter import AdbShellAdapter
+from LogDump import LogDump
 import TestSuite
 
 def main():
@@ -38,7 +39,10 @@ def main():
     elif parsed.test_name is not None:
         if parsed.device_id is not None:
             automation_execute = AutomationExecutor()
-            automation_execute.run_automation(parsed.device_id, parsed.test_name)
+            test_name = '{0}.{1}'.format(TestSuite.SOOCII_PACKGE_NAME, parsed.test_name)
+            automation_execute.run_automation(parsed.device_id, test_name)
+            log_dump = LogDump()
+            log_dump.dump_load(parsed.device_id)
         else:
             print("Require device id for test!!")
 

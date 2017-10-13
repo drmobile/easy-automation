@@ -1,4 +1,5 @@
 APK_FOLDER_NAME = 'apk'
+LOG_FOLDER_NAME = 'log'
 
 APK_AUTOMATION_NAME      = 'app-automation.apk'
 APK_AUTOMATION_TEST_NAME = 'app-automation-androidTest.apk'
@@ -9,4 +10,4 @@ AUTOMATION_TEST_RUNNER = 'me.soocii.socius.automation.test/android.support.test.
 
 AUTOMATION_PACKAGE_NAME = 'me.soocii.socius.automation'
 
-EMAIL_LOGIN_CLASS = 'me.soocii.socius.login.EmailLogIn'
+

@@ -1,11 +1,11 @@
-TEST_PACKGE_NAME = "me.soocii.socius.StreamingTest"
+SOOCII_PACKGE_NAME = "me.soocii.socius"
 
 TEST_SUITE_A_LIST = [
-    'BroadcastStressTest#stressTestBroadcast_T0001'
+    'StreamingTest.BroadcastStressTest#stressTestBroadcast_T0001'
 ]
 
 TEST_SUITE_B_LIST = [
-    'BroadcastStressTest#stressTestBroadcast_T0002'
+    'StreamingTest.BroadcastStressTest#stressTestBroadcast_T0002'
 ]
 
 

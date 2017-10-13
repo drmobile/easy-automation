@@ -124,7 +124,7 @@ class AdbShellAdapter():
             command_list = command.split(" ")
             adb_output = subprocess.check_output(command_list)
             adb_output_string = adb_output.decode("utf-8")
-            log_d(adb_output_string)
+
         except subprocess.CalledProcessError as e:
             log_e(str(e))
             return False
@@ -136,11 +136,10 @@ class AdbShellAdapter():
 
             adb_output = subprocess.check_output(command_list)
             adb_output_string = adb_output.decode("utf-8")
-            log_d(adb_output_string)
-
+            return adb_output_string
         except subprocess.CalledProcessError as e:
             print(e)
-
+            return None
 
 
 def main():
